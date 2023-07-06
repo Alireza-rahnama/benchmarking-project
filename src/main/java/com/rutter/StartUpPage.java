@@ -36,20 +36,20 @@ public class StartUpPage extends JFrame {
 
 
 	private RunSimulation runSimulation;
-	
+
 	private String backgroundImageFile = "src/main/images/start.png";
 	private JLabel backgroundLabel;
-	
+
 	private SimulationTranscript simulationTranscript = null;
 
 	public StartUpPage(String title) throws HeadlessException {
 		super(title);
-		
+
 
 		setPreferredSize(windowSize);
 
 		setJMenuBar(menuBar);
-		
+
 		radarCatalog = new RadarCatalog(this);
 		clientCatalog = new ConsumerClientCatalog(this);
 		configPage = new ConfigurationPage(this);
@@ -60,15 +60,15 @@ public class StartUpPage extends JFrame {
 		consumerClientCatalog.addActionListener(openConsumerClientCatalog());
 		viewReports.addActionListener(openReport());
 		newSimulation.addActionListener(openNewSimulation());
-		
+
 		menuBar.add(configureSimulation);
 		menuBar.add(radarStationCatalog);
 		menuBar.add(consumerClientCatalog);
 		menuBar.add(viewReports);
 		menuBar.add(newSimulation);
-        
+
 		backgroundLabel = new JLabel(new ImageIcon(backgroundImageFile));
-		
+
 		getContentPane().setLayout(new BorderLayout());
 		getContentPane().add(backgroundLabel, BorderLayout.CENTER);
 
@@ -117,10 +117,10 @@ public class StartUpPage extends JFrame {
 			}
 		};
 	}
-	
+
 	private ActionListener openReport() {
 		return new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
 				// Handle the button click event here
 				setVisible(false);
@@ -150,13 +150,13 @@ public class StartUpPage extends JFrame {
 //		        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
 //				runSimulation = new RunSimulation();
 				simulationTranscript = new SimulationTranscript(System.currentTimeMillis());
-//				PngImageMessageProvider client = new PngImageMessageProvider(simulationTranscript);
+				PngImageMessageProvider client = new PngImageMessageProvider(simulationTranscript);
 //				client.sendPngImageStream();
-//				CompletableFuture.runAsync(() -> {
-//
-//		            client.sendPngImageStream();
-//
-//				});
+				CompletableFuture.runAsync(() -> {
+
+					client.sendPngImageStream();
+
+				});
 //				client.shutdown();
 
 				AisMessageProvider aisMessageProviderClient = new AisMessageProvider(simulationTranscript);
@@ -165,19 +165,19 @@ public class StartUpPage extends JFrame {
 					aisMessageProviderClient.sendAisToSeaviewMessageStream();
 
 				});
-				
+
 //				ConsumerClient client2 = new ConsumerClient();
 //				client2.receivePngImageStream();
 //				client2.shutdown();
-				
-				
+
+
 				// SimualtionMultiThreadDriver simualtionMultiThreadDriver = new SimualtionMultiThreadDriver(simulationTranscript);
 
 				ConsumerClient consumerClient = new ConsumerClient();
 //				consumerClient.receivePngImageStream();
 //				consumerClient.receivePngImageStream2();
 				CompletableFuture.runAsync(() -> {
-					
+
 //		            try {
 //		                Thread.sleep(3000);
 //
@@ -185,12 +185,26 @@ public class StartUpPage extends JFrame {
 //		                t.printStackTrace();
 //		            }
 
-//		            consumerClient.receivePngImageStream();
-					consumerClient.receiveAisToSeaviewMessageStream();
-		            
+					consumerClient.receivePngImageStream();
+//					consumerClient.receiveAisToSeaviewMessageStream();
+
 				});
 
-				
+				CompletableFuture.runAsync(() -> {
+
+//		            try {
+//		                Thread.sleep(3000);
+//
+//		            } catch (Throwable t) {
+//		                t.printStackTrace();
+//		            }
+
+					consumerClient.receiveAisToSeaviewMessageStream();
+
+				});
+
+
+
 //				SimualtionMultiThreadDriver simualtionMultiThreadDriver = new SimualtionMultiThreadDriver();
 			}
 		};
@@ -200,7 +214,7 @@ public class StartUpPage extends JFrame {
 		new StartUpPage("Performance Benchmarking");
 
 	}
-	
+
 
 	public void repaintWindow() {
 		getContentPane().repaint();
