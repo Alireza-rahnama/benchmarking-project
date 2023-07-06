@@ -49,6 +49,8 @@ import java.time.Instant;
 import javax.net.ssl.SSLException;
 import io.github.cdimascio.dotenv.Dotenv;
 import com.Adapter.RUTTER_GRPC.*;
+import com.Adapter.RUTTER_GRPC.DataMessageTypes.AisToSeaviewMessage;
+import com.Adapter.RUTTER_GRPC.GrpcMessageTypes.OpenAisStreamMessage;
 
 public class ConsumerClient extends SeaViewServiceGrpc.SeaViewServiceImplBase {
 	private ManagedChannel channel;
@@ -305,61 +307,43 @@ public class ConsumerClient extends SeaViewServiceGrpc.SeaViewServiceImplBase {
 		}
 	}
 
-//	private Iterator<PngImageMessage> generatePngImageMessagesIterator(long numberOfPngImageMessages) {
-//		// This method generates and returns an iterator for a stream of
-//		// PngImageMessages
-//
-//		return new Iterator<PngImageMessage>() {
-//			private byte[] data;
-//			private ByteString pngByteString;
-//			private int currentIndex = 0;
-//
-////			Instant pngImageMessageGenerationStartTime = Instant.now();
-//
-//			@Override
-//			public boolean hasNext() {
-//				return currentIndex < numberOfPngImageMessages;
-//
-//			}
-//
-//			@Override
-//			public PngImageMessage next() {
-//				final String uniqueId = UUID.randomUUID().toString();
-//				ByteBuffer buffer = null;
-//				String nextFilePath = filesPath + pngFileNumber + ".bin";
-//
-//				try {
-//					data = Files.readAllBytes(Paths.get(nextFilePath));
-//					pngByteString = ByteString.copyFrom(data);
-//					
-////		            data = Files.readAllBytes(Paths.get(nextFilePath));
-////		            buffer = ByteBuffer.wrap(data);
-//
-//		            // Parse the HandshakeMessage from the binary data
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
-//
-//				PngImageMessage pngImageMessage = PngImageMessage.newBuilder()
-//						.setPngData(pngByteString)
-//						.setSeascanSourceId(uniqueId)
-//						.build();
-//				
-////	            PngImageMessage pngImageMessage = null;
-////				try {
-////					pngImageMessage = PngImageMessage.parseFrom(buffer);
-////				} catch (InvalidProtocolBufferException e) {
-////					e.printStackTrace();
-////				}
-//
-//
-//				currentIndex++;
-////	            pngFileNumber++;
-//
-//				return pngImageMessage;
-//			}
-//		};
-//	}
+	public void receiveAisToSeaviewMessageStream() {
+
+		try {
+			List<String> receivedUniqueIds = new ArrayList<>(); // List to store received unique IDs
+
+			StreamObserver<AisToSeaviewMessage> responseObserver = new StreamObserver<AisToSeaviewMessage>() {
+				@Override
+				public void onNext(AisToSeaviewMessage message) {
+					// Handle the received PngImageMessage
+					String msg = "AIS Message Received in Consumer Client has unique IDs: " + message.getSeascanSourceId();
+					System.out.println(msg);
+					receivedUniqueIds.add(message.getSeascanSourceId());
+				}
+
+				@Override
+				public void onError(Throwable t) {
+					// Handle any errors that occur
+					System.out.println("PngImageStream error: " + t.getMessage());
+				}
+
+				@Override
+				public void onCompleted() {
+					// Handle stream completion
+					System.out.println("Received messages at S6Node has unique IDs: " + receivedUniqueIds);
+				}
+			};
+
+			OpenAisStreamMessage openAisStreamMessage = OpenAisStreamMessage.newBuilder().setClientId(ConsumerClientuniqueId).build();
+			asyncStub.openAisStream(openAisStreamMessage, responseObserver);
+
+		} catch (Exception e) {
+			// Handle exceptions that occur during the RPC call
+			System.out.println("Error opening stream to S6Node: " + e.getMessage());
+		}
+
+//		streamObserver.onCompleted();
+	}
 
 	public void shutdown() {
 		channel.shutdown();

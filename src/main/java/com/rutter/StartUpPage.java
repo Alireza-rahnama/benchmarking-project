@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 
+import com.producerClient.AisMessageProvider;
 import com.producerClient.ConsumerClient;
 import com.producerClient.PngImageMessageProvider;
 import com.rutter.simulationrecord.SimulationTranscript;
@@ -149,14 +150,21 @@ public class StartUpPage extends JFrame {
 //		        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
 //				runSimulation = new RunSimulation();
 				simulationTranscript = new SimulationTranscript(System.currentTimeMillis());
-				PngImageMessageProvider client = new PngImageMessageProvider(simulationTranscript);
+//				PngImageMessageProvider client = new PngImageMessageProvider(simulationTranscript);
 //				client.sendPngImageStream();
+//				CompletableFuture.runAsync(() -> {
+//
+//		            client.sendPngImageStream();
+//
+//				});
+//				client.shutdown();
+
+				AisMessageProvider aisMessageProviderClient = new AisMessageProvider(simulationTranscript);
 				CompletableFuture.runAsync(() -> {
 
-		            client.sendPngImageStream();
+					aisMessageProviderClient.sendAisToSeaviewMessageStream();
 
 				});
-//				client.shutdown();
 				
 //				ConsumerClient client2 = new ConsumerClient();
 //				client2.receivePngImageStream();
@@ -177,7 +185,8 @@ public class StartUpPage extends JFrame {
 //		                t.printStackTrace();
 //		            }
 
-		            consumerClient.receivePngImageStream();
+//		            consumerClient.receivePngImageStream();
+					consumerClient.receiveAisToSeaviewMessageStream();
 		            
 				});
 
