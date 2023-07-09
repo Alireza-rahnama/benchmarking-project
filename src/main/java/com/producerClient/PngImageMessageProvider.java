@@ -108,7 +108,7 @@ public class PngImageMessageProvider {
 
 			@Override
 			public void onCompleted() {
-				System.out.println("Provider Client completed sending messages to S6Node with unique IDs: " + receivedUniqueIds);
+				System.out.println("Provider Client completed sending PNG messages to S6Node with unique IDs: " + receivedUniqueIds);
 			}
 		};
 

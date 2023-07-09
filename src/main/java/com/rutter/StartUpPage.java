@@ -15,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 
 import com.producerClient.AisMessageProvider;
-import com.producerClient.ConsumerClient;
 import com.producerClient.PngImageMessageProvider;
 import com.rutter.simulationrecord.SimulationTranscript;
 
@@ -150,60 +149,64 @@ public class StartUpPage extends JFrame {
 //		        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
 //				runSimulation = new RunSimulation();
 				simulationTranscript = new SimulationTranscript(System.currentTimeMillis());
-				PngImageMessageProvider client = new PngImageMessageProvider(simulationTranscript);
-//				client.sendPngImageStream();
-				CompletableFuture.runAsync(() -> {
-
-					client.sendPngImageStream();
-
-				});
-//				client.shutdown();
-
-				AisMessageProvider aisMessageProviderClient = new AisMessageProvider(simulationTranscript);
-				CompletableFuture.runAsync(() -> {
-
-					aisMessageProviderClient.sendAisToSeaviewMessageStream();
-
-				});
-
-//				ConsumerClient client2 = new ConsumerClient();
-//				client2.receivePngImageStream();
-//				client2.shutdown();
-
-
-				// SimualtionMultiThreadDriver simualtionMultiThreadDriver = new SimualtionMultiThreadDriver(simulationTranscript);
-
-				ConsumerClient consumerClient = new ConsumerClient();
-//				consumerClient.receivePngImageStream();
-//				consumerClient.receivePngImageStream2();
-				CompletableFuture.runAsync(() -> {
-
-//		            try {
-//		                Thread.sleep(3000);
+//				PngImageMessageProvider client = new PngImageMessageProvider(simulationTranscript);
+////				client.sendPngImageStream();
+//				CompletableFuture.runAsync(() -> {
 //
-//		            } catch (Throwable t) {
-//		                t.printStackTrace();
-//		            }
-
-					consumerClient.receivePngImageStream();
+//					client.sendPngImageStream();
+//
+//				});
+////				client.shutdown();
+//
+//				AisMessageProvider aisMessageProviderClient = new AisMessageProvider(simulationTranscript);
+//				CompletableFuture.runAsync(() -> {
+//
+//					aisMessageProviderClient.sendAisToSeaviewMessageStream();
+//
+//				});
+//
+////				ConsumerClient client2 = new ConsumerClient();
+////				client2.receivePngImageStream();
+////				client2.shutdown();
+//
+//
+//				// SimualtionMultiThreadDriver simualtionMultiThreadDriver = new SimualtionMultiThreadDriver(simulationTranscript);
+//
+//				ConsumerClient consumerClient = new ConsumerClient();
+////				consumerClient.receivePngImageStream();
+////				consumerClient.receivePngImageStream2();
+//				CompletableFuture.runAsync(() -> {
+//
+////		            try {
+////		                Thread.sleep(3000);
+////
+////		            } catch (Throwable t) {
+////		                t.printStackTrace();
+////		            }
+//
+//					consumerClient.receivePngImageStream();
+////					consumerClient.receiveAisToSeaviewMessageStream();
+//
+//				});
+//
+//				CompletableFuture.runAsync(() -> {
+//
+////		            try {
+////		                Thread.sleep(3000);
+////
+////		            } catch (Throwable t) {
+////		                t.printStackTrace();
+////		            }
+//
 //					consumerClient.receiveAisToSeaviewMessageStream();
-
-				});
-
-				CompletableFuture.runAsync(() -> {
-
-//		            try {
-//		                Thread.sleep(3000);
 //
-//		            } catch (Throwable t) {
-//		                t.printStackTrace();
-//		            }
+//				});
 
-					consumerClient.receiveAisToSeaviewMessageStream();
+			RadarStation radarStation = new RadarStation("Sea Scan");
+			radarStation.openStreamsAndSendMessagesToS6Node();
 
-				});
-
-
+			ConsumerClient consumerClient = new ConsumerClient("Sea View");
+			consumerClient.openStreamsAndReceiveMessagesFromS6Node();
 
 //				SimualtionMultiThreadDriver simualtionMultiThreadDriver = new SimualtionMultiThreadDriver();
 			}
