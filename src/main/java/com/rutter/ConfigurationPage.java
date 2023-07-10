@@ -315,14 +315,14 @@ public class ConfigurationPage extends JFrame {
 	}
 
 	public void saveToSimulationCatalog(SimulationConfiguration simulationConfiguration) {
-		try (PrintWriter out = new PrintWriter(new FileWriter(SIMULATION_RADARS_CONFIGURATION, true))) {
-			out.println(simulationConfiguration.getSimulationPeriod());
-			out.println(simulationConfiguration.getRadarsSimulationConfigurationCatalog());
-			out.println(simulationConfiguration.getConsumerClientSimulationConfigurationCatalog());
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try (PrintWriter out = new PrintWriter(new FileWriter(SIMULATION_RADARS_CONFIGURATION, true))) {
+//			out.println(simulationConfiguration.getSimulationPeriod());
+////			out.println(simulationConfiguration.getRadarsSimulationConfigurationCatalog());
+////			out.println(simulationConfiguration.getConsumerClientSimulationConfigurationCatalog());
+//
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 //    public void loadSimulationCatalog() {
