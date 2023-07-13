@@ -39,6 +39,18 @@ public class SimulationConfiguration {
         this.name = name;
     }
 
+    public SimulationConfiguration(int simulationPeriod,
+                                   String simulationId,
+                                   HashMap<RadarStation, Integer> radarQuantityMap,
+                                   HashMap<ConsumerClient, Integer> consumerQuantityMap) {
+
+        this.simulationPeriod = simulationPeriod;
+        this.simulationId = simulationId;
+        this.radarQuantityMap = radarQuantityMap;
+        this.consumerQuantityMap = consumerQuantityMap;
+        this.name = "simulation" + new Random().nextLong();
+    }
+
     public SimulationConfiguration() {
         // Default constructor without arguments
     }

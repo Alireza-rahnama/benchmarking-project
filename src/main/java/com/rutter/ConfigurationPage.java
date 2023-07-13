@@ -638,11 +638,12 @@ public class ConfigurationPage extends JFrame {
     }
 
     //TODO USE THIS To populate the simulationConfiguration for the gui
-    public void loadSimulationConfigurations(String filePath) {
+    public static ArrayList<SimulationConfiguration> loadSimulationConfigurations(String filePath) {
 
+        List<SimulationConfiguration> simulationConfigurations = null;
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            List<SimulationConfiguration> simulationConfigurations = objectMapper.readValue(new File(filePath), new TypeReference<List<SimulationConfiguration>>() {
+            simulationConfigurations = objectMapper.readValue(new File(filePath), new TypeReference<List<SimulationConfiguration>>() {
             });
 
             for (SimulationConfiguration configuration : simulationConfigurations) {
@@ -656,13 +657,13 @@ public class ConfigurationPage extends JFrame {
                         simulationPeriod,
                         simulationId,
                         radarQuantityMap,
-                        consumerQuantityMap,
-                        name);
+                        consumerQuantityMap);
 
                 System.out.println(simulationConfig.toString());
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return (ArrayList<SimulationConfiguration>) simulationConfigurations;
     }
 }
