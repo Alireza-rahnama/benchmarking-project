@@ -1,8 +1,4 @@
-Desktop:
-4
-Desktop:
-7
-Sea View:
-1
+
+Mobile App
+Mobile App
 Sea View
-4

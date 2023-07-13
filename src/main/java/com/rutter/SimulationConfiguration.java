@@ -1,18 +1,19 @@
 package com.rutter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.*;
+
+import static com.rutter.ConfigurationPage.SIMULATION_CONSUMERS_CONFIGURATION;
+import static com.rutter.ConfigurationPage.SIMULATION_RADARS_CONFIGURATION;
 
 public class SimulationConfiguration {
     private int simulationPeriod;
-    //this integer in these maps are the number of each radar and client instances
-//    private ArrayList<HashMap<RadarStation, Integer>> radarsSimulationConfigurationCatalog;
-//    private ArrayList<HashMap<ConsumerClient, Integer>> consumerClientSimulationConfigurationCatalog;
-
+    private String simulationId;
     private HashMap<RadarStation, Integer> radarQuantityMap;
     private HashMap<ConsumerClient, Integer> consumerQuantityMap;
+    private String name;
 
     public SimulationConfiguration(int simulationPeriod,
                                    HashMap<RadarStation, Integer> radarQuantityMap,
@@ -21,6 +22,25 @@ public class SimulationConfiguration {
         this.simulationPeriod = simulationPeriod;
         this.radarQuantityMap = radarQuantityMap;
         this.consumerQuantityMap = consumerQuantityMap;
+        this.simulationId = UUID.randomUUID().toString();
+    }
+
+    // Parameterized constructor
+    public SimulationConfiguration(int simulationPeriod,
+                                   String simulationId,
+                                   HashMap<RadarStation, Integer> radarQuantityMap,
+                                   HashMap<ConsumerClient, Integer> consumerQuantityMap,
+                                   String name) {
+
+        this.simulationPeriod = simulationPeriod;
+        this.simulationId = simulationId;
+        this.radarQuantityMap = radarQuantityMap;
+        this.consumerQuantityMap = consumerQuantityMap;
+        this.name = name;
+    }
+
+    public SimulationConfiguration() {
+        // Default constructor without arguments
     }
 
     public int getSimulationPeriod() {
@@ -47,59 +67,47 @@ public class SimulationConfiguration {
         this.simulationPeriod = simulationPeriod;
     }
 
-//    public ArrayList<HashMap<RadarStation, Integer>> getRadarsSimulationConfigurationCatalog() {
-//        return radarsSimulationConfigurationCatalog;
-//    }
-
-//    public void setRadarsSimulationConfigurationCatalog(
-//            ArrayList<HashMap<RadarStation, Integer>> radarsSimulationConfigurationCatalog) {
-//        this.radarsSimulationConfigurationCatalog = radarsSimulationConfigurationCatalog;
-//    }
-
-//    public ArrayList<HashMap<ConsumerClient, Integer>> getConsumerClientSimulationConfigurationCatalog() {
-//        return consumerClientSimulationConfigurationCatalog;
-//    }
-
-//    public void setConsumerClientSimulationConfigurationCatalog(
-//            ArrayList<HashMap<ConsumerClient, Integer>> consumerClientSimulationConfigurationCatalog) {
-//        this.consumerClientSimulationConfigurationCatalog = consumerClientSimulationConfigurationCatalog;
-//    }
-
-//    @Override
-//    public String toString() {
-//        return "SimulationConfiguration [simulationPeriod=" + simulationPeriod
-//                + ", radarsSimulationConfigurationCatalog=" + radarsSimulationConfigurationCatalog
-//                + ", consumerClientSimulationConfigurationCatalog=" + consumerClientSimulationConfigurationCatalog
-//                + "]";
-//    }
-
-    public static void instantiateRadars(HashMap<RadarStation, Integer> radarQuantityMap) {
+    public void instantiateRadars(HashMap<RadarStation, Integer> radarQuantityMap) {
 
         List<String> radarsTypeList = radarQuantityMap.keySet().stream().map(s -> s.getType()).toList();
         List<Integer> radarsQuantityList = radarQuantityMap.values().stream().toList();
-
-        int index = 0;
-        for (int radarQuant : radarsQuantityList) {
-            for (int i = 0; i < radarQuant; i++) {
-                RadarStation newRadar = new RadarStation(radarsTypeList.get(index));
-                System.out.println(newRadar.getType());
+        List<String> radarsCatalogList = new ArrayList<>();
+        try (PrintWriter out = new PrintWriter(new FileWriter(SIMULATION_RADARS_CONFIGURATION, true))) {
+            int index = 0;
+            for (int radarQuant : radarsQuantityList) {
+                for (int i = 0; i < radarQuant; i++) {
+                    RadarStation newRadar = new RadarStation(radarsTypeList.get(index));
+                    System.out.println(newRadar.getType());
+                    radarsCatalogList.add(newRadar.getType());
+                }
+                index++;
             }
-            index++;
+            radarsCatalogList.stream().forEach(out::println);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public static void instantiateConsumerClients(HashMap<ConsumerClient, Integer> consumerQuantityMap) {
+    public void instantiateConsumerClients(HashMap<ConsumerClient, Integer> consumerQuantityMap) {
 
         List<String> consumerTypeList = consumerQuantityMap.keySet().stream().map(s -> s.getType()).toList();
         List<Integer> consumerQuantityList = consumerQuantityMap.values().stream().toList();
+        List<String> consumersCatalogList = new ArrayList<>();
 
-        int index2 = 0;
-        for (int consumerQuant : consumerQuantityList) {
-            for (int i = 0; i < consumerQuant; i++) {
-                ConsumerClient newConsumerClient = new ConsumerClient(consumerTypeList.get(index2));
-                System.out.println(newConsumerClient.getType());
+        try (PrintWriter out = new PrintWriter(new FileWriter(SIMULATION_CONSUMERS_CONFIGURATION, true))) {
+            int index2 = 0;
+            for (int consumerQuant : consumerQuantityList) {
+                for (int i = 0; i < consumerQuant; i++) {
+                    ConsumerClient newConsumerClient = new ConsumerClient(consumerTypeList.get(index2));
+                    System.out.println(newConsumerClient.getType());
+//                    out.println(newConsumerClient.getType());
+                    consumersCatalogList.add(newConsumerClient.getType());
+                }
+                index2++;
             }
-            index2++;
+            consumersCatalogList.stream().forEach(out::println);
+        } catch (IOException err) {
+            err.printStackTrace();
         }
     }
 
@@ -136,8 +144,48 @@ public class SimulationConfiguration {
 
 //        List<String> radarsList = radarQuantityMap.keySet().stream().map(s -> s.getType()).toList();
 //        System.out.println(radarsList);
-        instantiateRadars(radarQuantityMap);
-        instantiateConsumerClients(consumerQuantityMap);
+        SimulationConfiguration simulationConf = new SimulationConfiguration(10, radarQuantityMap, consumerQuantityMap);
+        simulationConf.instantiateRadars(radarQuantityMap);
+        simulationConf.instantiateConsumerClients(consumerQuantityMap);
 
+    }
+
+    public String getSimulationId() {
+        return simulationId;
+    }
+
+    public void setSimulationId(String simulationId) {
+        this.simulationId = simulationId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SimulationConfiguration that = (SimulationConfiguration) o;
+        return simulationPeriod == that.simulationPeriod && Objects.equals(simulationId, that.simulationId) && Objects.equals(radarQuantityMap, that.radarQuantityMap) && Objects.equals(consumerQuantityMap, that.consumerQuantityMap);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(simulationPeriod, simulationId, radarQuantityMap, consumerQuantityMap);
+    }
+
+    @Override
+    public String toString() {
+        return "SimulationConfiguration{" +
+                "simulationPeriod=" + simulationPeriod +
+                ", simulationId='" + simulationId + '\'' +
+                ", radarQuantityMap=" + radarQuantityMap +
+                ", consumerQuantityMap=" + consumerQuantityMap +
+                '}';
     }
 }

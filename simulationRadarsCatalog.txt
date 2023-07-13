@@ -1,18 +1,7 @@
-Type A:
-2
-1
-Type B:
-3
-2
-Type F:
-4
-5
-Sea Scan:
-2
-1
+
+Radar Type A
+Radar Type A
 Sea Scan
-2
-1
-Sea Scan
-20
-1
+Radar Type B
+Radar Type B
+Radar Type B

@@ -92,7 +92,7 @@ public class PngImageMessageProvider {
 
 		List<String> receivedUniqueIds = new ArrayList<>(); // List to store received unique IDs
 
-		Iterator<PngImageMessage> pngImageIterator = generatePngImageMessagesIterator(1);
+		Iterator<PngImageMessage> pngImageIterator = generatePngImageMessagesIterator(30);
 
 		StreamObserver<Empty> streamObserver = new StreamObserver<>() {
 			
