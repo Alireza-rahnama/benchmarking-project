@@ -27,11 +27,10 @@ public class SimulationCatalog extends JFrame {
 
     private JButton runSimulationButton;
     private StartUpPage startUpPage;
-
+    private ButtonGroup buttonGroup;
 
     public SimulationCatalog(StartUpPage startUpPage) {
         this.startUpPage = startUpPage;
-
         setTitle("Simulation Configuration Catalog");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
@@ -66,8 +65,16 @@ public class SimulationCatalog extends JFrame {
             System.out.println(simulationConfig.toString());
         }
 
+        setSimulationPanelComponents(simulationConfigurationsSize);
+
+        pack();
+        setLocationRelativeTo(null); // Center the window on the screen
+//        setVisible(true);
+    }
+
+    private void setSimulationPanelComponents(int simulationConfigurationsSize) {
         simulationConfigJRadioButtons = new JRadioButton[simulationConfigurationsSize];
-        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup = new ButtonGroup();
 
         for (int i = 0; i < simulationConfigurationsSize; i++) {
             String checkBoxLabel = simulationConfigurations.get(i).getName().toString();
@@ -87,6 +94,7 @@ public class SimulationCatalog extends JFrame {
         repaintButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                updateCatalogPanel();
                 dispose(); // Close the RadarCatalog JFrame
                 startUpPage.setVisible(true); // Show the StartUpPage JFrame
             }
@@ -95,18 +103,23 @@ public class SimulationCatalog extends JFrame {
 
         pack();
         setLocationRelativeTo(null); // Center the window on the screen
-//        setVisible(true);
     }
 
-    private void updateCatalogPanel() {
+    public void updateCatalogPanel() {
         simulationPanel.removeAll();
+        simulationPanel.add(simulationConfigLabel);
+        simulationConfigurationRadioboxes.clear();
 
-        for ( SimulationConfiguration simulationConfiguration : simulationConfigurations) {
-            String simulationConfigName = simulationConfiguration.getName();
+//        for ( SimulationConfiguration simulationConfiguration : simulationConfigurations) {
+//            String simulationConfigName = simulationConfiguration.getName();
+//
+//            JRadioButton radioButton = new JRadioButton(simulationConfigName);
+//            simulationPanel.add(radioButton);
+//        }
+        simulationConfigurations = loadSimulationConfigurations("SimulationConfiguration2.json");
 
-            JRadioButton radioButton = new JRadioButton(simulationConfigName);
-            simulationPanel.add(radioButton);
-        }
+        int simulationConfigurationsSize = simulationConfigurations.size();
+        setSimulationPanelComponents(simulationConfigurationsSize);
 
         simulationPanel.revalidate();
         simulationPanel.repaint();
@@ -127,6 +140,7 @@ public class SimulationCatalog extends JFrame {
         for (int i = 0; i < simulationConfigurationRadioboxes.size(); i++) {
             if (simulationConfigurationRadioboxes.get(i).isSelected()) {
                 System.out.println("the selected checkbox has name: " + simulationConfigurations.get(i).getName());
+                buttonGroup.clearSelection();
                 return simulationConfigurations.get(i).getName();
             }
         }

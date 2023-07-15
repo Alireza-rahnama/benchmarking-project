@@ -34,7 +34,6 @@ public class StartUpPage extends JFrame {
     private ReportPage reportPage;
     private Dimension windowSize = new Dimension(800, 600);
 
-
     private RunSimulation runSimulation;
 
     private String backgroundImageFile = "src/main/images/start.png";
@@ -45,13 +44,13 @@ public class StartUpPage extends JFrame {
     public StartUpPage(String title) throws HeadlessException {
         super(title);
 
-
         setPreferredSize(windowSize);
 
         setJMenuBar(menuBar);
 
         radarCatalog = new RadarCatalog(this);
         simulationCatalog = new SimulationCatalog(this);
+
         clientCatalog = new ConsumerClientCatalog(this);
         configPage = new ConfigurationPage(this);
         reportPage = new ReportPage(this);
@@ -218,6 +217,7 @@ public class StartUpPage extends JFrame {
                 // Handle the button click event here
                 setVisible(false);
                 simulationCatalog.setSize(800, 600);
+                simulationCatalog.updateCatalogPanel();
                 simulationCatalog.setVisible(true);
                 repaintWindow();
             }

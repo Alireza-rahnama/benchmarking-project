@@ -35,13 +35,14 @@ public class ConfigurationPage extends JFrame {
     private JLabel consumerClientTypeLabel;
 
     private JLabel simualtionPeriodLabel;
+    private JLabel simualtionNameLabel;
 
     private JLabel[] radarLabels;
     private JCheckBox[] radarCheckBoxes;
     private JTextField[] radarQuantityFields;
     private JTextField[] dataTransmitionIntervalFields;
     private JTextField simulationtionPeriodField;
-
+    private JTextField simulationtionNameField;
     private JCheckBox[] consumerClientCheckBoxes;
     private JTextField[] consumerClientQuantityFields;
 
@@ -102,6 +103,12 @@ public class ConfigurationPage extends JFrame {
 
         simulationtionPeriodField = new JTextField();
         simulationPanel.add(simulationtionPeriodField);
+
+        simualtionNameLabel = new JLabel("Enter Simulation Name");
+        simulationPanel.add(simualtionNameLabel);
+
+        simulationtionNameField = new JTextField();
+        simulationPanel.add(simulationtionNameField);
 
         ArrayList<RadarStation> radars = loadRadarStations();
         radarStations = radars;
@@ -195,6 +202,7 @@ public class ConfigurationPage extends JFrame {
 
                 // Clear simulation period field
                 simulationtionPeriodField.setText("");
+                simulationtionNameField.setText("");
 
                 selectedRadars.clear();
                 selectedRadarsIndexList.clear();
@@ -438,6 +446,14 @@ public class ConfigurationPage extends JFrame {
         }
     }
 
+    public String getSimulationName() {
+        try {
+            return simulationtionNameField.getText();
+        } catch (Throwable e) {
+            return "No Name Assigned";
+        }
+    }
+
     public SimulationConfiguration getSimulationConfiguration() throws IOException {
         getSelectedRadarsTypes();
         HashMap<RadarStation, Integer> radarQuantityMap = getRadarsPropertiesForSimulationCatalog();
@@ -446,7 +462,8 @@ public class ConfigurationPage extends JFrame {
         HashMap<ConsumerClient, Integer> consumerQuantityMap = getConsumerClientsPropertiesForSimulationCatalog();
 
         int simulationPeriod = getSimulationPeriod();
-        return new SimulationConfiguration(simulationPeriod, radarQuantityMap, consumerQuantityMap);
+        String simulationName = getSimulationName();
+        return new SimulationConfiguration(simulationPeriod, radarQuantityMap, consumerQuantityMap,simulationName);
 
 //		try (PrintWriter out = new PrintWriter(new FileWriter(SIMULATION_RADARS_CONFIGURATION, true))) {
 //			out.println(simulationConfiguration.getSimulationPeriod());
@@ -587,6 +604,31 @@ public class ConfigurationPage extends JFrame {
         ObjectSaver objectSaver = new ObjectSaver();
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                // Uncheck all radar checkboxes
+//                for (JCheckBox checkBox : radarCheckBoxes) {
+//                    checkBox.setSelected(false);
+//                }
+//
+//                // Clear radar quantity fields
+//                for (JTextField field : radarQuantityFields) {
+//                    field.setText("");
+//                }
+//
+//                // Clear data transmission interval fields
+//                for (JTextField field : dataTransmitionIntervalFields) {
+//                    field.setText("");
+//                }
+//
+//                // Uncheck all consumer client checkboxes
+//                for (JCheckBox checkBox : consumerClientCheckBoxes) {
+//                    checkBox.setSelected(false);
+//                }
+//
+//                // Clear consumer client quantity fields
+//                for (JTextField field : consumerClientQuantityFields) {
+//                    field.setText("");
+//                }
+//
                 SimulationConfiguration simulationConfiguration = null;
                 try {
                     simulationConfiguration = getSimulationConfiguration();

@@ -25,6 +25,18 @@ public class SimulationConfiguration {
         this.simulationId = UUID.randomUUID().toString();
     }
 
+    public SimulationConfiguration(int simulationPeriod,
+                                   HashMap<RadarStation, Integer> radarQuantityMap,
+                                   HashMap<ConsumerClient, Integer> consumerQuantityMap,
+                                   String name) {
+
+        this.simulationPeriod = simulationPeriod;
+        this.radarQuantityMap = radarQuantityMap;
+        this.consumerQuantityMap = consumerQuantityMap;
+        this.simulationId = UUID.randomUUID().toString();
+        this.name = name;
+    }
+
     // Parameterized constructor
     public SimulationConfiguration(int simulationPeriod,
                                    String simulationId,
