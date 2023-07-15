@@ -1,11 +1,10 @@
 package com.rutter;
 
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+
 
 import java.io.*;
 import java.util.*;
@@ -215,6 +214,7 @@ public class ConfigurationPage extends JFrame {
 
         simulationPanel.add(repaintButton);
         add(simulationPanel);
+
     }
 
     public ActionListener saveConfiguration() {
@@ -659,7 +659,7 @@ public class ConfigurationPage extends JFrame {
                         radarQuantityMap,
                         consumerQuantityMap);
 
-                System.out.println(simulationConfig.toString());
+//                System.out.println(simulationConfig.toString());
             }
         } catch (IOException e) {
             e.printStackTrace();

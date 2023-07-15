@@ -1,143 +1,24 @@
 [
   {
     "simulationPeriod": 120,
-    "simulationId": "91c8bb1b-567c-4171-ac0b-0be665414380",
+    "simulationId": "76539e8b-0f25-4a50-ad19-0e91e3bb107c",
     "radarQuantityMap": {
-      "RadarStation [uniqeId=fee5441c-c71b-4c0e-b9ef-f394d7219673, type=RadarStation [uniqeId=b5e236a3-ed4c-429d-8790-8dcd6755fc84, type=RadarStation [uniqeId=6e4b6f76-086b-4ed2-bb7d-f520f7926bf6, type=RadarStation [uniqeId=12b5d99a-ac69-4d68-a039-7ec746b83e35, type=RadarStation [uniqeId=3baf3a07-da7b-42e6-8ab1-d1ff727be07e, type=RadarStation [uniqeId=210face9-d10e-42e4-9d7a-9181aaa779d0, type=RadarStation [uniqeId=c66bba90-eb29-430a-93d7-9715e124e023, type=RadarStation [uniqeId=3afb3c4e-a777-4bfb-abf1-d14a1f1fefd0, type=RadarStation [uniqeId=13249b16-8b07-4394-9e4c-687d3bf31328, type=RadarStation [uniqeId=d46e7741-b19e-4f1d-ae72-e951c7bd7645, type=RadarStation [uniqeId=49e724c9-d761-4024-93b9-1d421a13c50b, type=RadarStation [uniqeId=bd883368-8ffb-430e-a096-83308909e3e9, type=Radar Type A, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 2,
-      "RadarStation [uniqeId=07c1ce5e-7967-401b-8469-3ac1e0eb7303, type=RadarStation [uniqeId=1ec62e05-4dc9-436a-84fd-7ad4f484aa08, type=RadarStation [uniqeId=64d6f716-4dce-44e5-a1d7-d601bf12cf4e, type=RadarStation [uniqeId=7bf9683e-ba70-4f88-942a-cf0948f47a6d, type=RadarStation [uniqeId=fcb87b92-e7d5-450e-b9d6-3bd151c18ff9, type=RadarStation [uniqeId=5e06de7d-1afb-4e16-bcf8-b599ec3c97c2, type=RadarStation [uniqeId=c90af18f-b207-47aa-b473-ad2e1ba2ad7b, type=RadarStation [uniqeId=f678533c-4c00-46ab-b312-2a8edbfb26fc, type=RadarStation [uniqeId=241ec23d-75ad-4648-a8a9-a49b3bfe3a6c, type=RadarStation [uniqeId=7bd9b92e-652e-42f5-bbf3-f2cc8012918d, type=RadarStation [uniqeId=9c5a1037-59e6-4346-a402-4d20d5e5b534, type=RadarStation [uniqeId=8006dd0b-5c8a-4c25-bf94-ce81e49f237f, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 10
+      "RadarStation [uniqeId=81799f3f-3048-409f-b1f4-46d1290a7d14, type=RadarStation [uniqeId=8813c35e-afb6-45a7-a5bb-043c7b93f774, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0]": 3
     },
     "consumerQuantityMap": {
-      "ConsumerClient [id=a4629d6c-af98-4c63-99ff-9b9f30a7f218, type=ConsumerClient [id=74ae6f01-8fe7-4a3d-9362-d6965659838d, type=ConsumerClient [id=498b3b96-faea-4feb-b259-42ea32d31e7a, type=ConsumerClient [id=66aa4ecd-6461-4e04-8677-55edd73a83df, type=ConsumerClient [id=bb16bb65-b1ff-4af1-8ff9-c6afe72b1f13, type=ConsumerClient [id=f5793fce-2365-4d70-b559-4b19215a444c, type=ConsumerClient [id=003ba8bd-8466-458f-94c3-9302cfabd06f, type=ConsumerClient [id=5d1d8162-a0f4-4250-ba94-b578b1446cf3, type=ConsumerClient [id=d9827482-fb58-43b1-9930-9957f9a4599c, type=ConsumerClient [id=bf1ed26d-a61f-4408-9202-8f6f9879651d, type=ConsumerClient [id=88ba612e-a36b-41fe-89b4-0277a5f99f7c, type=ConsumerClient [id=c0b82fe3-3c97-4fe3-b0ae-a838509a89c8, type=Sea View]]]]]]]]]]]]": 10
+      "ConsumerClient [id=b756112f-fa1e-47de-9423-30e7cfdaa3b1, type=ConsumerClient [id=ffffcf4d-9a42-4e07-94d2-96d74470a698, type=Sea View]]": 10
     },
-    "name": null
-  },
-  {
-    "simulationPeriod": 60,
-    "simulationId": "69f6fe2b-31ae-4545-9764-13b55bea36a5",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=36b61d34-4aa5-4c59-b1dc-013bd21d9efb, type=RadarStation [uniqeId=c33fc556-5541-4dc9-9ee3-765d88df5670, type=RadarStation [uniqeId=411a46a5-d692-42af-a60b-76dc94816206, type=RadarStation [uniqeId=774beca8-052d-45d2-89fb-bfe6e3dfa2bc, type=RadarStation [uniqeId=20603faf-ddee-4917-b972-1b40c6ed7be4, type=RadarStation [uniqeId=22cea1c5-3343-4984-ae57-5e6e34fafffa, type=RadarStation [uniqeId=1ebe6d53-12bc-43df-9348-6fd8f1b3b2ad, type=RadarStation [uniqeId=b44116c5-247d-4c3f-97dc-34a477c31dbc, type=RadarStation [uniqeId=10f435b8-b8dc-4e72-b966-fdbdcf2180b0, type=RadarStation [uniqeId=faab9c67-9024-476d-a990-2522b0469ca7, type=RadarStation [uniqeId=94b3e4b0-8d60-4826-a922-d4c18c33564c, type=Radar Type A, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1,
-      "RadarStation [uniqeId=89fe3d7f-1e18-45a2-b5cc-c23effae2e97, type=RadarStation [uniqeId=e922fd7d-24ba-49b8-83fb-9945d7f30f15, type=RadarStation [uniqeId=8140ebff-3654-42e2-88b5-58a0a933897d, type=RadarStation [uniqeId=379ba9d7-3491-42dc-a635-8bf2524aead9, type=RadarStation [uniqeId=82336b9a-5834-424d-9ecf-c790582f2d93, type=RadarStation [uniqeId=117dcdd7-4fef-4956-b930-924a2c8bc071, type=RadarStation [uniqeId=bf60670a-90f2-4ca8-9097-42bd348c1096, type=RadarStation [uniqeId=a5275bea-7dc2-44ed-ba00-49ae849cffff, type=RadarStation [uniqeId=f910f046-36d5-4419-b3d7-14b27adda2e6, type=RadarStation [uniqeId=2b1faee2-cbe4-4a50-b527-a864efe79ced, type=RadarStation [uniqeId=718ffc74-d7e0-4228-b763-e041b46e82d8, type=Radar Type A, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1,
-      "RadarStation [uniqeId=c601973e-ac1d-4c63-9916-d508d13355ac, type=RadarStation [uniqeId=b1f84b5c-ca35-490c-bd5c-5338141c10be, type=RadarStation [uniqeId=43c7b68e-7137-44da-9a47-e1af8bbb96c8, type=RadarStation [uniqeId=2a535d35-1cb4-4c60-96fd-89f3b6ca5076, type=RadarStation [uniqeId=bfecd576-9836-473d-a631-5eb55689bbdb, type=RadarStation [uniqeId=81bab6ac-0a18-4178-89ef-e44197fc6ed1, type=RadarStation [uniqeId=7e741600-37da-4765-8e23-a0e1f85f8010, type=RadarStation [uniqeId=210312e8-181e-4c8c-ba87-e37306703213, type=RadarStation [uniqeId=9a69dba8-3984-436d-b21b-e4e9d5a7c7e4, type=RadarStation [uniqeId=c2d275b9-8919-408f-83e7-f4535b86cb17, type=RadarStation [uniqeId=5ea38b62-4fdc-4c65-ab18-ec7d9b9d59fa, type=Type F, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 2,
-      "RadarStation [uniqeId=db97269a-992b-4038-b6c8-18c9ea6ecb62, type=RadarStation [uniqeId=a9173410-f0bb-4815-bbcf-a065eafe71f1, type=RadarStation [uniqeId=61c60cd7-8eee-4b72-b24a-32568ed0c637, type=RadarStation [uniqeId=09b02107-c7e8-4df7-b6c5-82369d02fcc7, type=RadarStation [uniqeId=0211f874-4c03-4df4-8bd3-ce7a372f8339, type=RadarStation [uniqeId=8f1ccd0b-0194-43ba-8b4b-e91702281e6a, type=RadarStation [uniqeId=8f0ec74f-152c-4e6b-8dc2-902ddf1990a1, type=RadarStation [uniqeId=6a299efa-036c-45c3-b3d5-f298bd47fa62, type=RadarStation [uniqeId=8d51362a-24b5-41cd-9415-e6fc6d68dccb, type=RadarStation [uniqeId=add5f182-9b84-4c7f-b267-18a528b6543b, type=RadarStation [uniqeId=a6bba8cc-bb7d-474f-8951-caee26d68ef8, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1,
-      "RadarStation [uniqeId=631062c8-d923-4464-9e20-b923af4f5197, type=RadarStation [uniqeId=78bd3652-6651-4e41-a184-fcb3c8c5703e, type=RadarStation [uniqeId=34f7817b-7c4c-42f1-b99d-6332c038e1a1, type=RadarStation [uniqeId=de415f82-0396-46b4-a27e-6e9fe667b5d5, type=RadarStation [uniqeId=54c87baf-dc21-4746-b187-af411553f608, type=RadarStation [uniqeId=576b52dc-bc4a-4d80-812e-4b3f6eefa2a2, type=RadarStation [uniqeId=593a03b3-4b93-4ea7-a08b-5c3f5b5d99d6, type=RadarStation [uniqeId=307497c1-8961-44d0-8561-a281c3a4ef09, type=RadarStation [uniqeId=bf41b40d-fe0b-40fa-8082-8b13f2669d84, type=RadarStation [uniqeId=52e47489-ff9f-46d2-9666-02892450048f, type=RadarStation [uniqeId=700e67e8-f391-4680-9d8d-d76645bde7cd, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1,
-      "RadarStation [uniqeId=0dab8e88-47c2-4ef8-a5e0-036827e29515, type=RadarStation [uniqeId=cbc777d9-27f5-4193-aa88-82a712b2893e, type=RadarStation [uniqeId=2b50dad4-1904-4d45-9368-6913be839f01, type=RadarStation [uniqeId=60bd0a00-e20f-446b-8d1d-a5a2773f496e, type=RadarStation [uniqeId=18b892bf-7380-4596-b43d-0ac3ac6c47dc, type=RadarStation [uniqeId=92534e93-ab77-4354-bc02-86c589601c12, type=RadarStation [uniqeId=4a38dfeb-fe43-4191-914b-cb12809572b1, type=RadarStation [uniqeId=9af9553a-6ff9-4594-865a-8a27e7329c5c, type=RadarStation [uniqeId=b6ab7db2-4d5b-407f-a35f-09fadb878a51, type=RadarStation [uniqeId=21258f57-6ba6-443d-939e-a1895cbfbb65, type=RadarStation [uniqeId=efa4ba79-7b4d-44f4-bd22-715af35b9f8c, type=Type F, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 2,
-      "RadarStation [uniqeId=22798879-e746-4211-bfeb-9b54f1fd53bf, type=RadarStation [uniqeId=2f6f93af-96b6-48c7-9f91-b063bc5995c5, type=RadarStation [uniqeId=eb046d4c-f3ee-4ac2-b8cb-a99886bec1c4, type=RadarStation [uniqeId=9146e31c-02a1-47bd-95bd-bf4d8a5216af, type=RadarStation [uniqeId=48e60afb-2968-4d03-be83-ad97e1dfb34c, type=RadarStation [uniqeId=cdc16fef-a835-4d69-abf1-b92b8aedd224, type=RadarStation [uniqeId=ae7d3660-7496-44e4-96c3-da248924ca0e, type=RadarStation [uniqeId=bceb1ad9-f15b-4923-a08b-4fbf6959db0b, type=RadarStation [uniqeId=40f3859a-bbfe-4373-b9b8-51c0b259aa03, type=RadarStation [uniqeId=30ad450a-1f27-4b58-b35d-72127a348ea8, type=RadarStation [uniqeId=0e52c97b-2d0a-438c-8aca-42f82ce1631c, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=17b35994-74a9-4149-b7d0-54d3ab3e2769, type=ConsumerClient [id=7b1a4c62-2315-4b32-b8eb-e000520c91ae, type=ConsumerClient [id=7eb3b59b-d24c-40ad-abde-c347f315cbd9, type=ConsumerClient [id=61fbe745-0fdf-4ada-9ac7-ae5a081c90a4, type=ConsumerClient [id=ed054a13-de51-4c17-8dbc-d83696eee376, type=ConsumerClient [id=b18fa7a9-c87f-489d-99a5-fc13dd1feca5, type=ConsumerClient [id=8efb7e08-8b09-4a4c-92b8-9b5e3d052c88, type=ConsumerClient [id=27c0c56e-0b50-42ba-bd3b-dcc4c5a14923, type=ConsumerClient [id=63a21809-c886-4a68-9dad-ccaaccf20895, type=ConsumerClient [id=0216e113-b1f8-45b8-80ae-485a3769556c, type=ConsumerClient [id=992c52ba-5ab3-479f-8d5a-53530c15ccc9, type=Sea View]]]]]]]]]]]": 10,
-      "ConsumerClient [id=bd8255e9-4255-4d50-baa0-341c1117ee30, type=ConsumerClient [id=ec637695-5757-43c3-816e-9bc5784d8dcb, type=ConsumerClient [id=44c4e81a-1b7f-47ac-a840-76c91f077eef, type=ConsumerClient [id=0fd6091b-f5e1-449b-8a30-7250a0c64b7a, type=ConsumerClient [id=07cf9d31-0400-4f15-bb27-e1f333a9c96c, type=ConsumerClient [id=d05a3889-36e3-45ca-ab55-d8cd7a26336a, type=ConsumerClient [id=b49c5d38-f39a-4d0e-903a-33bef3d5ac13, type=ConsumerClient [id=8ad460e6-039e-4e68-857f-8a666a1212e6, type=ConsumerClient [id=bd8415b4-3846-44ca-9e2a-c64e5acf6f2b, type=ConsumerClient [id=d3a2ee7c-340f-49a2-8891-8d1d0b7967c8, type=ConsumerClient [id=e74b7ebb-128f-4152-a708-a4ffc9f223cc, type=Sea View]]]]]]]]]]]": 10
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 1,
-    "simulationId": "e9da2374-6f8c-4a55-b6d1-a37a7520747c",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=37c9a736-bc53-49c9-8e82-268df25996eb, type=RadarStation [uniqeId=8bdf4e36-cbc5-4ada-b7fa-22eb9602f2a9, type=RadarStation [uniqeId=7a69c638-b3ce-40d7-97b4-66628be20a57, type=RadarStation [uniqeId=50c3b9f5-02b7-4623-b86c-0c470ca38be0, type=RadarStation [uniqeId=54d1f408-850c-485e-80d0-26303993d629, type=RadarStation [uniqeId=c3812869-d14c-4c15-b422-fb70679273b5, type=RadarStation [uniqeId=964f74af-34a3-4ba6-b275-cbe1debbc628, type=RadarStation [uniqeId=b59aec04-9f00-4048-b020-ffb2ffde0378, type=RadarStation [uniqeId=7094d27d-35d2-4c25-aff0-ed9c37ebaf15, type=RadarStation [uniqeId=4fe2745b-cdd1-4043-8e60-d9274ad22a4e, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=31079c75-3182-4d10-b0b7-4deb5e0f1522, type=ConsumerClient [id=c9827944-1122-4010-8e96-baddafc29399, type=ConsumerClient [id=18bc1cf4-6a90-4fb4-9750-a0890e9f9e63, type=ConsumerClient [id=ef45402d-cf62-4645-8107-0e835425145b, type=ConsumerClient [id=f1dd7a6e-00fd-4597-a1ca-9fc3c65b1179, type=ConsumerClient [id=9897f008-0ca6-4448-a2df-8f20e1b9d01e, type=ConsumerClient [id=95c85fb9-020b-4ff8-9bb6-3c9db5e634c0, type=ConsumerClient [id=3e005eee-fe51-418d-a3a9-3a3bad0f1222, type=ConsumerClient [id=c6cd7f7c-c226-4a86-862e-ebd723d607c5, type=ConsumerClient [id=1c72c9e0-62a2-462b-948e-72f04c922b7d, type=Sea View]]]]]]]]]]": 1
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 4,
-    "simulationId": "b12be26f-25fd-4f16-ba59-741d4aef4fed",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=5e8d88db-1841-4bbe-8646-58db55c31c0d, type=RadarStation [uniqeId=3f224008-9c51-44fc-841f-d92ef282fdf4, type=RadarStation [uniqeId=a3367339-e6b7-4d9a-aa7d-d353fd737d9d, type=RadarStation [uniqeId=9ceeaa00-ddcf-407d-926a-fa293249683d, type=RadarStation [uniqeId=32e5443f-bc18-4e02-98bc-d3576e349858, type=RadarStation [uniqeId=1c4568b5-eefd-4190-8691-0f2df9b394ec, type=RadarStation [uniqeId=7a9cf078-0bbc-4cf2-b4c8-8610a8003b4d, type=RadarStation [uniqeId=9ee2e216-5a46-4ec1-aea8-47f3ddbcd204, type=RadarStation [uniqeId=99529184-c673-4f1c-9ef6-8c77aaf048e1, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 4
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=379d52cb-26fe-4096-918e-fd16d7ab6b99, type=ConsumerClient [id=94217413-16d1-40fb-aec7-6f2668288f61, type=ConsumerClient [id=25b298a5-e75e-4459-86f6-8c83ac87c66d, type=ConsumerClient [id=d84c5253-a81a-4c7a-8b7d-c983de79ca26, type=ConsumerClient [id=4ef579ca-8a9a-4f1f-a135-24cd16fd8f02, type=ConsumerClient [id=caf7645e-779e-4514-a3eb-5c7cc77e7417, type=ConsumerClient [id=9394fb32-984e-4c6e-8463-2a28961b212b, type=ConsumerClient [id=f9e1d43b-87ea-4b28-b232-e9cdf58b67a3, type=ConsumerClient [id=de66d203-16f9-4ce0-91db-f0281b33c761, type=Desktop App]]]]]]]]]": 4
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 22,
-    "simulationId": "21d2061c-c3a5-4001-a5c9-a26420245c50",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=05052eb0-f48b-4c8a-84f5-fcce6cc996c4, type=RadarStation [uniqeId=a7092f8b-d3fa-48b2-9a01-97c4ba5716dd, type=RadarStation [uniqeId=c324699f-9381-457d-8998-9c5aa9c75553, type=RadarStation [uniqeId=686fccc2-a8b6-46b3-8e11-e7cca0e78aa1, type=RadarStation [uniqeId=263aa808-49c0-4887-b299-25b709b5fe91, type=RadarStation [uniqeId=cef11873-dd25-453f-934e-a434db973c1e, type=RadarStation [uniqeId=7fb54e51-3e67-421f-8746-3b65b16ced1b, type=RadarStation [uniqeId=a5fc7a69-4ebd-4580-a1b5-aad53631d7b8, type=Type F, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 22
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=66c835d4-cb05-47b7-bcc6-487050a6a28b, type=ConsumerClient [id=59594807-ddba-487f-9f63-0b5e9edd9d50, type=ConsumerClient [id=32153714-6de9-45ab-897c-be309d98f4fc, type=ConsumerClient [id=2512fdc8-2fda-4f51-b4c6-82fc3674fc8b, type=ConsumerClient [id=9e30cbbc-edb4-4005-bd05-d677eb1ef3b3, type=ConsumerClient [id=11778f14-c685-4a57-9089-1c02d7eabb5f, type=ConsumerClient [id=f3141f0f-2275-4c8c-8caf-93c1dd4f2ca8, type=ConsumerClient [id=9d788a3b-1f33-4e9e-988a-c128b4b8d958, type=Desktop App]]]]]]]]": 22
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 1,
-    "simulationId": "6ec2b3ca-d762-4487-b7d0-2749001ce5a5",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=1df8c54f-ab6f-45af-8192-40b8a0ae5adf, type=RadarStation [uniqeId=dea7984d-0260-4c7d-9a1f-bc7996ac0d6a, type=RadarStation [uniqeId=bf2c92e2-4915-484c-8c1c-d9584a1fda08, type=RadarStation [uniqeId=8394f5ee-65aa-45c3-8d66-98dff8a6c050, type=RadarStation [uniqeId=87e9d9b8-f250-47df-88c9-c2d7e4773db2, type=RadarStation [uniqeId=69ff051d-40ae-4d1a-8e29-6cfd9da03f42, type=RadarStation [uniqeId=fc6bb92f-e653-4fe9-be41-2c32722f2569, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=70910f6d-ed4a-4317-9d23-24f19803c978, type=ConsumerClient [id=978bee16-b4e4-42de-b109-f71a2affb353, type=ConsumerClient [id=950af6c0-c946-433d-99da-84af0b92faea, type=ConsumerClient [id=a48a0db5-1719-4c80-af44-f2fb91e28659, type=ConsumerClient [id=25ec2219-4c3a-4c62-88bd-716c739e949a, type=ConsumerClient [id=4816e849-4084-4c96-952a-203c6560fb3a, type=ConsumerClient [id=0489cc24-a54e-4972-8cb5-fa5a7a91f6ca, type=Sea View]]]]]]]": 1
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 3,
-    "simulationId": "6d200d0b-5ce1-412a-a6f6-3f946df0ebeb",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=a531e1e9-c833-485b-939e-f4ce57270c94, type=RadarStation [uniqeId=783e4c5b-8df3-4e1d-a574-00c0b2293cca, type=RadarStation [uniqeId=0f920c17-663a-456c-b6bf-14e2a2334544, type=RadarStation [uniqeId=f5e4008d-f2a2-4475-8630-50c61a6be57b, type=RadarStation [uniqeId=1d54a7c7-d31c-4a3a-81ed-357e375a5fdd, type=RadarStation [uniqeId=717bff45-96f3-4688-8f26-4b50b7631bd8, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 3
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=24c5c322-c8f0-4b70-9584-489bb5fac8a4, type=ConsumerClient [id=33202a60-5bbc-4768-a8b6-f0143ad8700c, type=ConsumerClient [id=90299fcc-7586-4b89-bde5-0529e3432c10, type=ConsumerClient [id=59b08662-a82a-4022-8b62-8e68b6b90cb9, type=ConsumerClient [id=5c2135cc-d476-4244-ab63-1baa9c60ab7f, type=ConsumerClient [id=6e0b78ed-685c-4e8c-8ebd-81b40defa2a6, type=Sea View]]]]]]": 3
-    },
-    "name": null
+    "name": "simulation 2"
   },
   {
     "simulationPeriod": 5,
-    "simulationId": "c3e0a869-b125-4a52-81af-bb454ceebe6b",
+    "simulationId": "f825a6d4-c142-4155-a792-293118bd2004",
     "radarQuantityMap": {
-      "RadarStation [uniqeId=d7454edb-77b6-41de-be77-8f5d374ea40f, type=RadarStation [uniqeId=c2fde209-25ce-4621-ad2c-314215b68c09, type=RadarStation [uniqeId=942dbb26-e894-4a47-9e8e-5ea5c896e9cd, type=RadarStation [uniqeId=49ec7a52-3226-4cb1-9d7b-5cb875b58685, type=RadarStation [uniqeId=34120425-56ea-406b-8bd3-b402dcefb39a, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 5
+      "RadarStation [uniqeId=2b098a2c-7001-4b43-ade3-48c849c2e283, type=Sea Scan, dataTransmitionInterval=0]": 5
     },
     "consumerQuantityMap": {
-      "ConsumerClient [id=10e9c7ae-6c21-49ca-8405-8bd6ca104931, type=ConsumerClient [id=18d261cd-1a95-4bff-af56-473de866d3b6, type=ConsumerClient [id=ed0df57f-8830-4f9e-9818-5491fb547592, type=ConsumerClient [id=27358e78-8804-412b-81e8-32b4c5804d46, type=ConsumerClient [id=8ad0bf91-819d-49eb-876b-47dd250c1720, type=Sea View]]]]]": 5
+      "ConsumerClient [id=92605f10-eef8-446d-a508-cace56dcf693, type=Sea View]": 5
     },
-    "name": null
-  },
-  {
-    "simulationPeriod": 1,
-    "simulationId": "e3d8c3fc-f194-4439-99e2-565c98a93e87",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=5c4f357e-12bd-47a7-8f34-b0f8f87564a4, type=RadarStation [uniqeId=96ab2941-ab71-490b-b4ec-55d8e19bd0f9, type=RadarStation [uniqeId=85e08191-c345-473d-8c96-a233eb48bdad, type=RadarStation [uniqeId=1da186e6-a5e6-4118-9840-b56f9d380a0f, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=f4bb0eec-a322-47a5-aa8b-068c3280c107, type=ConsumerClient [id=0bc0f97c-3c51-44db-9673-8d8c05f4e0ac, type=ConsumerClient [id=10bb4620-3265-42a3-a121-b0c6be08bc0f, type=ConsumerClient [id=29b87e9d-43bd-4635-9b7f-0613053f661f, type=Sea View]]]]": 1
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 1,
-    "simulationId": "8f780251-638d-44a1-96cc-e64ca8e465b7",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=3b1241c9-91ee-48d7-b793-a613681a49ce, type=RadarStation [uniqeId=8b3b126b-4565-49cd-bbd2-c0e461f0ec95, type=RadarStation [uniqeId=b6743d7e-adc0-4fda-858e-6ff3567f2f5c, type=Sea Scan, dataTransmitionInterval=0], dataTransmitionInterval=0], dataTransmitionInterval=0]": 1
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=d58f89d4-a1c2-4dbb-869a-988b1c6d5cab, type=ConsumerClient [id=9270661b-0a59-4397-9980-5fade68e6c56, type=ConsumerClient [id=2fcffc4d-543d-4c6d-9031-b5a64017e823, type=Sea View]]]": 1
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 0,
-    "simulationId": "2944bffa-84cd-4edc-afe3-749f00637682",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=65da62f4-e928-4e07-bf71-32c56e8fea8e, type=RadarStation [uniqeId=0bdec70b-1251-4a73-bb79-cd229c144cb9, type=Radar Type A, dataTransmitionInterval=0], dataTransmitionInterval=0]": 1
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=d12d24d6-f293-4f4e-be9b-a9b29987960f, type=ConsumerClient [id=7f77c369-ea00-4f48-8e6e-695f13b00da7, type=Mobile App]]": 1
-    },
-    "name": null
-  },
-  {
-    "simulationPeriod": 111,
-    "simulationId": "20d68b4e-38dd-450a-afbd-e57e0cda4275",
-    "radarQuantityMap": {
-      "RadarStation [uniqeId=e2005a32-ae63-4816-8b3b-ddf36f35f73e, type=Radar Type B, dataTransmitionInterval=0]": 111
-    },
-    "consumerQuantityMap": {
-      "ConsumerClient [id=09e06e50-835c-4a93-a3fa-e76e0be807f4, type=Desktop App]": 11,
-      "ConsumerClient [id=d822f7fd-3dd8-42f9-8b31-a5e8b9f9b9c9, type=Sea View]": 11
-    },
-    "name": null
+    "name": "simulation 1"
   }
 ]

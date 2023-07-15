@@ -20,123 +20,125 @@ import com.rutter.simulationrecord.SimulationTranscript;
 
 public class StartUpPage extends JFrame {
 
-	protected static final JButton configureSimulation = new JButton("Configure Simulation");
-	protected static final JButton radarStationCatalog = new JButton("Radar Catalog");
-	protected static final JButton consumerClientCatalog = new JButton("Consumer Client Catalog");
-	protected static final JButton viewReports = new JButton("View Reports");
-	protected static final JButton newSimulation = new JButton("New Simulation");
+    protected static final JButton configureSimulation = new JButton("Configure Simulation");
+    protected static final JButton radarStationCatalog = new JButton("Radar Catalog");
+    protected static final JButton consumerClientCatalog = new JButton("Consumer Client Catalog");
+    protected static final JButton viewReports = new JButton("View Reports");
+    protected static final JButton newSimulation = new JButton("New Simulation");
 
-	private JMenuBar menuBar = new JMenuBar();
-	private RadarCatalog radarCatalog;
-	private ConsumerClientCatalog clientCatalog;
-	private ConfigurationPage configPage;
-	private ReportPage reportPage;
-	private Dimension windowSize = new Dimension(800, 600);
-
-
-	private RunSimulation runSimulation;
-
-	private String backgroundImageFile = "src/main/images/start.png";
-	private JLabel backgroundLabel;
-
-	private SimulationTranscript simulationTranscript = null;
-
-	public StartUpPage(String title) throws HeadlessException {
-		super(title);
+    private JMenuBar menuBar = new JMenuBar();
+    private RadarCatalog radarCatalog;
+    private SimulationCatalog simulationCatalog;
+    private ConsumerClientCatalog clientCatalog;
+    private ConfigurationPage configPage;
+    private ReportPage reportPage;
+    private Dimension windowSize = new Dimension(800, 600);
 
 
-		setPreferredSize(windowSize);
+    private RunSimulation runSimulation;
 
-		setJMenuBar(menuBar);
+    private String backgroundImageFile = "src/main/images/start.png";
+    private JLabel backgroundLabel;
 
-		radarCatalog = new RadarCatalog(this);
-		clientCatalog = new ConsumerClientCatalog(this);
-		configPage = new ConfigurationPage(this);
-		reportPage = new ReportPage(this);
+    private SimulationTranscript simulationTranscript = null;
 
-		configureSimulation.addActionListener(openConfigPage());
-		radarStationCatalog.addActionListener(openRadarCatalog());
-		consumerClientCatalog.addActionListener(openConsumerClientCatalog());
-		viewReports.addActionListener(openReport());
-		newSimulation.addActionListener(openNewSimulation());
+    public StartUpPage(String title) throws HeadlessException {
+        super(title);
 
-		menuBar.add(configureSimulation);
-		menuBar.add(radarStationCatalog);
-		menuBar.add(consumerClientCatalog);
-		menuBar.add(viewReports);
-		menuBar.add(newSimulation);
 
-		backgroundLabel = new JLabel(new ImageIcon(backgroundImageFile));
+        setPreferredSize(windowSize);
 
-		getContentPane().setLayout(new BorderLayout());
-		getContentPane().add(backgroundLabel, BorderLayout.CENTER);
+        setJMenuBar(menuBar);
 
-		pack();
-		setVisible(true);
+        radarCatalog = new RadarCatalog(this);
+        simulationCatalog = new SimulationCatalog(this);
+        clientCatalog = new ConsumerClientCatalog(this);
+        configPage = new ConfigurationPage(this);
+        reportPage = new ReportPage(this);
 
-	}
+        configureSimulation.addActionListener(openConfigPage());
+        radarStationCatalog.addActionListener(openRadarCatalog());
+        consumerClientCatalog.addActionListener(openConsumerClientCatalog());
+        viewReports.addActionListener(openReport());
+        newSimulation.addActionListener(openNewSimulation());
 
-	private ActionListener openConfigPage() {
-		return new ActionListener() {
+        menuBar.add(configureSimulation);
+        menuBar.add(radarStationCatalog);
+        menuBar.add(consumerClientCatalog);
+        menuBar.add(viewReports);
+        menuBar.add(newSimulation);
 
-			public void actionPerformed(ActionEvent e) {
+        backgroundLabel = new JLabel(new ImageIcon(backgroundImageFile));
 
-				// Handle the button click event here
-				setVisible(false);
-				configPage.setSize(800, 600);
-				configPage.setVisible(true);
-				repaintWindow();
-			}
-		};
-	}
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(backgroundLabel, BorderLayout.CENTER);
 
-	private ActionListener openRadarCatalog() {
-		return new ActionListener() {
+        pack();
+        setVisible(true);
 
-			public void actionPerformed(ActionEvent e) {
-				// Handle the button click event here
-				setVisible(false);
-				radarCatalog.setSize(800, 600);
-				radarCatalog.setVisible(true);
-				repaintWindow();
+    }
 
-			}
-		};
-	}
+    private ActionListener openConfigPage() {
+        return new ActionListener() {
 
-	private ActionListener openConsumerClientCatalog() {
-		return new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
 
-			public void actionPerformed(ActionEvent e) {
-				// Handle the button click event here
-				setVisible(false);
-				clientCatalog.setSize(800, 600);
-				clientCatalog.setVisible(true);
-				repaintWindow();
-			}
-		};
-	}
+                // Handle the button click event here
+                setVisible(false);
+                configPage.setSize(800, 600);
+                configPage.setVisible(true);
+                repaintWindow();
+            }
+        };
+    }
 
-	private ActionListener openReport() {
-		return new ActionListener() {
+    private ActionListener openRadarCatalog() {
+        return new ActionListener() {
 
-			public void actionPerformed(ActionEvent e) {
-				// Handle the button click event here
-				setVisible(false);
-				reportPage.setSize(reportPage.getPreferredSize());
-				if (simulationTranscript != null) {
-					reportPage.loadTranscript(simulationTranscript);
-				}
-				reportPage.setVisible(true);
-				repaintWindow();
-			}
-		};
-	}
+            public void actionPerformed(ActionEvent e) {
+                // Handle the button click event here
+                setVisible(false);
+                radarCatalog.setSize(800, 600);
+                radarCatalog.setVisible(true);
+                repaintWindow();
 
-	private ActionListener openNewSimulation() {
-		return new ActionListener() {
+            }
+        };
+    }
 
-			public void actionPerformed(ActionEvent e) {
+    private ActionListener openConsumerClientCatalog() {
+        return new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                // Handle the button click event here
+                setVisible(false);
+                clientCatalog.setSize(800, 600);
+                clientCatalog.setVisible(true);
+                repaintWindow();
+            }
+        };
+    }
+
+    private ActionListener openReport() {
+        return new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                // Handle the button click event here
+                setVisible(false);
+                reportPage.setSize(reportPage.getPreferredSize());
+                if (simulationTranscript != null) {
+                    reportPage.loadTranscript(simulationTranscript);
+                }
+                reportPage.setVisible(true);
+                repaintWindow();
+            }
+        };
+    }
+
+    private ActionListener openNewSimulation() {
+        return new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
 //				ProducerClient p = new ProducerClient();
 //				p.createClient();
 //				String Id = p.getNodeID();
@@ -148,7 +150,6 @@ public class StartUpPage extends JFrame {
 //		        
 //		        JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
 //				runSimulation = new RunSimulation();
-				simulationTranscript = new SimulationTranscript(System.currentTimeMillis());
 //				PngImageMessageProvider client = new PngImageMessageProvider(simulationTranscript);
 ////				client.sendPngImageStream();
 //				CompletableFuture.runAsync(() -> {
@@ -202,27 +203,37 @@ public class StartUpPage extends JFrame {
 //
 //				});
 
-			RadarStation radarStation = new RadarStation("Sea Scan");
-			radarStation.openStreamsAndSendMessagesToS6Node();
-
-			ConsumerClient consumerClient = new ConsumerClient("Sea View");
-			consumerClient.openStreamsAndReceiveMessagesFromS6Node();
+                ///below are working runnable simulation
+//                simulationTranscript = new SimulationTranscript(System.currentTimeMillis());
+//
+//                RadarStation radarStation = new RadarStation("Sea Scan");
+//                radarStation.openStreamsAndSendMessagesToS6Node();
+//
+//                ConsumerClient consumerClient = new ConsumerClient("Sea View");
+//                consumerClient.openStreamsAndReceiveMessagesFromS6Node();
 
 //				SimualtionMultiThreadDriver simualtionMultiThreadDriver = new SimualtionMultiThreadDriver();
-			}
-		};
-	}
-
-	public static void main(String[] args) {
-		new StartUpPage("Performance Benchmarking");
-
-	}
 
 
-	public void repaintWindow() {
-		getContentPane().repaint();
+                // Handle the button click event here
+                setVisible(false);
+                simulationCatalog.setSize(800, 600);
+                simulationCatalog.setVisible(true);
+                repaintWindow();
+            }
+        };
+    }
 
-	}
+    public static void main(String[] args) {
+        new StartUpPage("Performance Benchmarking");
+
+    }
+
+
+    public void repaintWindow() {
+        getContentPane().repaint();
+
+    }
 
 }
 
